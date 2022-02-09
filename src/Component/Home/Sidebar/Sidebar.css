@@ -1,0 +1,39 @@
+.dashboard-color{
+    color: rgb(57, 160, 235);
+}
+.logo{
+    width: 4.25rem;
+    border: 1px solid red;
+}
+
+.mlauto{
+    margin-left: auto !important;
+}
+
+nav a.nav-link{
+    font-weight: 500;
+    letter-spacing: 0.0375rem;
+    cursor: pointer;
+}
+nav ul li {
+    text-transform: uppercase;
+}
+.navbar-nav > li > a{
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+    color: #fff !important;
+    border-bottom: 0.1875rem solid rgba(255, 255, 255, 0);
+}
+.navbar-brand{
+    max-width: 6.25rem;
+    padding: 0 !important;
+    height: 3.75rem !important;
+}
+.navbar-nav > li > a.active, .navbar-nav > li > a:focus{
+    border-bottom: 0.1875rem solid #f9ab00;
+}
+.navbar-nav > li > a.hover{
+    color:darkgoldenrod;
+    font-size: large;
+}
+
