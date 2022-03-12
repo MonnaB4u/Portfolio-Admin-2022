@@ -10,6 +10,7 @@ const AddProject = () => {
     const pImgRef = useRef();
     const detailsRef = useRef();
     const technologyRef = useRef();
+    const gitRef = useRef();
 
     const handleUser = e => {
         const name = nameRef.current.value;
@@ -17,8 +18,9 @@ const AddProject = () => {
         const img = pImgRef.current.value;
         const details = detailsRef.current.value;
         const tecnology = technologyRef.current.value;
+        const gitLink = gitRef.current.value;
 
-        const newProject = { name, link, img, details, tecnology }
+        const newProject = { name, link, img, details, tecnology, gitLink };
         console.log(newProject);
 
         fetch('https://afternoon-plains-42822.herokuapp.com/addProjects', {
@@ -65,6 +67,11 @@ const AddProject = () => {
                                     </div>
                                 </div>
 
+                                <div class="col-md- mb-3">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="gitLink" id="gitLink" placeholder="Github Link" ref={gitRef} required />
+                                    </div>
+                                </div>
 
 
                                 <div class="col-md-">
@@ -73,13 +80,13 @@ const AddProject = () => {
                                     </div>
                                 </div>
 
-                                <div class="col-md- mt-3">
+                                <div class="col-md- mt-3 ">
                                     <div class="form-group">
                                         <textarea class="form-control" name="tecnology" rows="2" placeholder="Project Technology" ref={technologyRef} required></textarea>
                                     </div>
                                 </div>
 
-                                <div class="col-md- mb-3">
+                                <div class="col-md- my-3">
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="img" id="img" placeholder="Project Image Link" ref={pImgRef} required />
                                     </div>

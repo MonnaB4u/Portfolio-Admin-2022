@@ -28,16 +28,14 @@ const Login = () => {
             .then(result => {
                 const { displayName, email, photoURL } = result.user;
                 let user = {
+                        isSignedIn: true,
                     name: displayName,
                     email: email,
                     photoURL: photoURL
                 }
-                setlogUser(user);
-                setLoggedInUser(user)
-                navigate(from)
-
-
-
+                // setlogUser(user);
+                handleResponse(user, true)
+                // navigate(from)
             })
             .catch(err => {
                 alert(err.message)
@@ -51,6 +49,14 @@ const Login = () => {
             .then(() => {
                 setlogUser({});
             })
+    }
+
+
+    const handleResponse = (res, redirect) => {
+        setLoggedInUser(res);
+        if (redirect) {
+            navigate(from);
+        }
     }
 
     return (

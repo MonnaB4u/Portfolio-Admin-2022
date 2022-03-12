@@ -30,6 +30,12 @@ const Update = () => {
         setUser(updateUser)
     }
 
+    const handleGitLinkChange = e => {
+        const gitLink = e.target.value
+        const updateUser = { name: user.name, link: user.link, gitLink: gitLink , details: user.details, technology: user.technology, img: user.img };
+        setUser(updateUser)
+    }
+
     const handleDetailsChange = e => {
         const updateDetails = e.target.value
         const updateUser = { name: user.name, link: user.link, details: updateDetails, technology: user.technology, img: user.img };
@@ -96,6 +102,7 @@ const Update = () => {
                             <p><span className="h4">Details: </span> <span>{user.details}</span></p>
                             <p><span className="h4">Technology: </span> <span>{user.tecnology}</span></p>
                             <p><span className="h4">Image: </span><span>{user.img}</span></p>
+                               <p><span className="h4">Git Link: </span>{user.gitLink === undefined ? <span>Coming Soon </span> : <span>{user.gitLink}</span>} </p>
                         </div>
                     </div>
             }
@@ -114,6 +121,12 @@ const Update = () => {
                     <div class="col-md- mb-3">
                         <div class="form-group">
                             <input type="text" class="form-control" name="link" id="link" placeholder="Project Link" onChange={handleLinkChange} value={user.link || ''} />
+                        </div>
+                    </div>
+
+                    <div class="col-md- mb-3">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="gitLink" id="gitLink" placeholder="Git Hub Link" onChange={handleGitLinkChange} value={user.gitLink || ''} />
                         </div>
                     </div>
 
