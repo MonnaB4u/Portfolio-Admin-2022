@@ -9,7 +9,7 @@ const EditAchivement = () => {
 
     console.log(user)
     useEffect(() => {
-        const url = `https://afternoon-plains-42822.herokuapp.com/allAchivement/${id}`;
+        const url = `https://portfolio2022-database.vercel.app/allAchivement/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setUser(data))
@@ -36,7 +36,7 @@ const EditAchivement = () => {
     }
 
     const handleUpdateuser = e => {
-        const url = `https://afternoon-plains-42822.herokuapp.com/allAchivement/${id}`;
+        const url = `https://portfolio2022-database.vercel.app/allAchivement/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

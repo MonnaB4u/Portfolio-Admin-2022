@@ -16,56 +16,45 @@ import HeaderMain from './Component/Home/Header/HeaderMain';
 import EditAchivement from './Component/Home/Achivement/EditAchivement';
 import Resume from './Component/Home/Resume/Resume';
 import Login from './Component/Login/Login';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
-import AuthProvider from './Component/AuthProvider/AuthProvider';
-import useLocalStorageState from 'use-local-storage-state';
 
 
-export const SelectedServiceContext = createContext([])
+
 export const UserContext = createContext([])
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useLocalStorageState('userInfo', {
-    isSignedIn: false,
-    name: '',
-    email: '',
-    image: ''
-  })
-  const [selectedService, setSelectedService] = useLocalStorageState('selectedService', {})
+  const [loggedInUser, setLoggedInUser] = useState(() => {
+    const saved = localStorage.getItem("name");
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
+  });
 
+  useEffect(() => {
+    localStorage.setItem("name", JSON.stringify(loggedInUser));
+  }, [loggedInUser]);
 
 
   return (
-    //  <SelectedServiceContext.Provider value={[selectedService, setSelectedService]}>
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-
-      <div className="row">
-
         <div className="">
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<HeaderMain />} />
               <Route element={<PrivateRoute />}>
-
-                <Route path="/project" element={<Header />} />
-                <Route path="/skill" element={<Skills />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/achivment" element={<Achivement />} />
-                <Route path="/resume" element={<Resume />} />
-                <Route path="/update/:id" element={<Update />} />
-                <Route path="/updateBlog/:id" element={<EditBlog />} />
-                <Route path="/Editachivment/:id" element={<EditAchivement />} />
-                <Route path="/login" element={<Login />} />
+              <Route path="/" element={<HeaderMain />} />
+              <Route path="/project" element={<Header />} />
+              <Route path="/skill" element={<Skills />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/achivment" element={<Achivement />} />
+              <Route path="/resume" element={<Resume />} />
+              <Route path="/update/:id" element={<Update />} />
+              <Route path="/updateBlog/:id" element={<EditBlog />} />
+              <Route path="/Editachivment/:id" element={<EditAchivement />} />
               </Route>
-
-
-
-
+               <Route path="/login" element={<Login />} />
             </Routes>
           </BrowserRouter>
         </div>
-      </div>
     </UserContext.Provider>
     // </SelectedServiceContext.Provider>
 

@@ -135,15 +135,16 @@ const EmailPassLogin = () => {
 
 
     return (
-        <div className="d-flex justify-content-center mt-3">
-            <div className=" login-form text-white p-5">
-                <form onSubmit={handleRegistrations}>
+        <div className=" my-3">
+            <div className="d-flex justify-content-center ">
+            <div className=" text-white col-md-4 col-10">
+                <form onSubmit={handleRegistrations} className="login-form  from">
                     <p className="h3 text-center">Please {isLogin ? "Login" : "Register"}</p>
                     {
                         !isLogin &&
-                        <div className="mb-3">
+                        <div className="mb-3 ">
                             <label for="exampleInputEmail1" className="form-label">User Name</label>
-                            <input onBlur={handleNameChange} type="text" className="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" />
+                            <input onBlur={handleNameChange} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                         </div>
                     }
 
@@ -173,6 +174,7 @@ const EmailPassLogin = () => {
 
                 </form>
             </div>
+        </div>
         </div>
     );
 };

@@ -8,7 +8,7 @@ const EditBlog = () => {
 
     console.log(user)
     useEffect(() => {
-        const url = `https://afternoon-plains-42822.herokuapp.com/allBlog/${id}`;
+        const url = `https://portfolio2022-database.vercel.app/allBlog/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setUser(data))
@@ -35,7 +35,7 @@ const EditBlog = () => {
     }
 
     const handleUpdateuser = e => {
-        const url = `https://afternoon-plains-42822.herokuapp.com/allBlog/${id}`;
+        const url = `https://portfolio2022-database.vercel.app/allBlog/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

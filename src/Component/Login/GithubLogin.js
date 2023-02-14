@@ -45,12 +45,13 @@ const GithubLogin = () => {
     }
 
     return (
-        <div>
+
+            <div className="">
             {
                 !logUser.name ?
-                    <button className="btn bg-dark text-white w-25" onClick={() => handleLogin()}>Github</button>
+                    <button className="btn bg-dark text-white w-25  b-block" onClick={() => handleLogin()}>Github</button>
                     :
-                    <button className="btn bg-danger text-white w-25" onClick={() => handleSignOut()}>Github Sign Out</button>
+                    <button className="btn bg-danger w-75 text-white w-25 b-block" onClick={() => handleSignOut()}>Github Sign Out</button>
 
             }
 
@@ -62,6 +63,7 @@ const GithubLogin = () => {
                 </div>
             }
         </div>
+
     );
 };
 

@@ -14,7 +14,7 @@ const Sidebar = () => {
 
             <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-primary">
                 <div className="container">
-                    <a className="navbar-brand  text-white" href="/"> <img className="logo mx-3" src={img} alt="" /> {loggedInuser.name} </a>
+                    {/* <a className="navbar-brand  text-white" href="/"> <img className="logo mx-3" src={img} alt="" /> {loggedInuser.name} </a> */}
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <FontAwesomeIcon icon={faBars} style={{ color: '#fff' }} />
                     </button>
@@ -39,7 +39,7 @@ const Sidebar = () => {
                                 <a className="nav-link" href="/achivment">Achivement</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/login">{loggedInuser.email ? "Log Out" : "LogIn"}  </a>
+                                <a className="nav-link" href="/login">{loggedInuser.email ? loggedInuser.name : "LogIn"}  </a>
                             </li>
                         </ul>
                     </div>

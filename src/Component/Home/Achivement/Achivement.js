@@ -15,7 +15,7 @@ const Achivement = () => {
         const newProject = { img, name, details }
         console.log(newProject);
 
-        fetch('https://afternoon-plains-42822.herokuapp.com/addAchivement', {
+        fetch('https://portfolio2022-database.vercel.app/addAchivement', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newProject)

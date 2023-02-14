@@ -6,7 +6,7 @@ const AllProject = () => {
     const [Projectdata, setData] = useState([])
     // console.log(Projectdata)
     useEffect(() => {
-        const url = 'https://afternoon-plains-42822.herokuapp.com/projectCollection'
+        const url = 'https://portfolio2022-database.vercel.app/projectCollection'
         fetch(url)
             .then(res => res.json())
             .then(data => setData(data))
@@ -16,7 +16,7 @@ const AllProject = () => {
 
         const proceed = window.confirm('Are you sure you want to delete')
         if (proceed) {
-            const url = `https://afternoon-plains-42822.herokuapp.com/projectCollection/${id}`
+            const url = `https://portfolio2022-database.vercel.app/projectCollection/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

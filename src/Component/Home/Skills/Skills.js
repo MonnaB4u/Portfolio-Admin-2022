@@ -13,7 +13,7 @@ const Skills = () => {
         const newProject = { name }
         console.log(newProject);
 
-        fetch('https://afternoon-plains-42822.herokuapp.com/addSkill', {
+        fetch('https://portfolio2022-database.vercel.app/addSkill', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newProject)

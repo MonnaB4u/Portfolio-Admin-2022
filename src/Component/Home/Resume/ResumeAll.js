@@ -4,7 +4,7 @@ const ResumeAll = () => {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        const url = 'https://afternoon-plains-42822.herokuapp.com/allResume'
+        const url = 'https://portfolio2022-database.vercel.app/allResume'
         fetch(url)
             .then(res => res.json())
             .then(data => setData(data))
@@ -15,7 +15,7 @@ const ResumeAll = () => {
 
         const proceed = window.confirm('Are you sure you want to delete')
         if (proceed) {
-            const url = `https://afternoon-plains-42822.herokuapp.com/allResume/${id}`
+            const url = `https://portfolio2022-database.vercel.app/allResume/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
-import initializeAuth from '../firebase/firebase.initialize.js';
+import initializeAuth from '../firebase/firebase.initialize';
 import EmailPassLogin from './EmailPassLogin';
 import GithubLogin from './GithubLogin';
 import './Login.css'
@@ -28,14 +28,14 @@ const Login = () => {
             .then(result => {
                 const { displayName, email, photoURL } = result.user;
                 let user = {
-                        isSignedIn: true,
                     name: displayName,
                     email: email,
                     photoURL: photoURL
                 }
-                // setlogUser(user);
-                handleResponse(user, true)
-                // navigate(from)
+                setlogUser(user);
+                setLoggedInUser(user)
+                navigate(from)
+
             })
             .catch(err => {
                 alert(err.message)
@@ -51,21 +51,13 @@ const Login = () => {
             })
     }
 
-
-    const handleResponse = (res, redirect) => {
-        setLoggedInUser(res);
-        if (redirect) {
-            navigate(from);
-        }
-    }
-
     return (
         <div>
-            <div className="mt-5 p-5">
-                <div className=" m-5 col-sm">
+            <div>
+                <div className="row">
                     <EmailPassLogin></EmailPassLogin>
                 </div>
-                <div className="col-sm text-center">
+                <div className=" text-center">
                     {
                         !logUser.name ?
 

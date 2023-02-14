@@ -5,7 +5,7 @@ const SkillAll = () => {
     const [data, setData] = useState([])
     // console.log(Projectdata)
     useEffect(() => {
-        const url = 'https://afternoon-plains-42822.herokuapp.com/Skills'
+        const url = 'https://portfolio2022-database.vercel.app/Skills'
         fetch(url)
             .then(res => res.json())
             .then(data => setData(data))
@@ -13,10 +13,10 @@ const SkillAll = () => {
 
 
 const handleDeleteUser = id => {
-
         const proceed = window.confirm('Are you sure you want to delete')
-        if (proceed) {
-            const url = `https://afternoon-plains-42822.herokuapp.com/Skills/${id}`
+        if (proceed===true) {
+            // console.log(proceed)
+            const url = `https://portfolio2022-database.vercel.app/Skills/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -24,7 +24,6 @@ const handleDeleteUser = id => {
                 .then(datas => {
                     if (datas.deletedCount > 0) {
                         alert('Deleted Successfully')
-
                         const remaining = data.filter(user => user._id !== id)
                         setData(remaining)
                     }

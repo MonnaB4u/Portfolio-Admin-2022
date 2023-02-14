@@ -11,7 +11,7 @@ const Update = () => {
 
     console.log(user)
     useEffect(() => {
-        const url = `https://afternoon-plains-42822.herokuapp.com/projectCollection/${id}`;
+        const url = `https://portfolio2022-database.vercel.app/projectCollection/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setUser(data))
@@ -55,7 +55,7 @@ const Update = () => {
     }
 
     const handleUpdateuser = e => {
-        const url = `https://afternoon-plains-42822.herokuapp.com/projectCollection/${id}`;
+        const url = `https://portfolio2022-database.vercel.app/projectCollection/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

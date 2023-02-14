@@ -11,7 +11,7 @@ const Resume = () => {
         const newProject = { link }
         console.log(newProject);
 
-        fetch('https://afternoon-plains-42822.herokuapp.com/addResume', {
+        fetch('https://portfolio2022-database.vercel.app/addResume', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newProject)

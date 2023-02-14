@@ -23,7 +23,7 @@ const AddProject = () => {
         const newProject = { name, link, img, details, tecnology, gitLink };
         console.log(newProject);
 
-        fetch('https://afternoon-plains-42822.herokuapp.com/addProjects', {
+        fetch('https://portfolio2022-database.vercel.app/addProjects', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newProject)
